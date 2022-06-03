@@ -47,7 +47,7 @@ pipeline{
 
     post {
 
-        sucess{
+        success{
 
             //send the successful email
 
@@ -58,9 +58,10 @@ pipeline{
 
             //send the unsuccessful email
 
-            echo : "failure"
+            echo : "failure",
 
         }
     }
 
 }
+
