@@ -37,6 +37,9 @@ pipeline {
 
               }
 
+                  
+              }
+
               stage('status Buils'){
 
                   steps{
@@ -44,9 +47,6 @@ pipeline {
                       echo 'Build success'
                       
                   }
-              }
-
-                  
               }
 
     }
