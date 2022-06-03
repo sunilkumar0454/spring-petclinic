@@ -19,6 +19,7 @@ pipeline{
             steps {
 
                  git url:'https://github.com/sunilkumar0454/spring-petclinic.git',
+
                  branch : 'main'
             }
 
@@ -29,9 +30,9 @@ pipeline{
 
                 steps { 
 
-              sh script : 'mnv clean package'
+              sh script : 'mvn clean package'
 
-         }
+          }
 
           } 
            stage ('reporting') {
@@ -39,8 +40,8 @@ pipeline{
                steps{
 
                junit testResults:'target/surfire-reports/*.xml'
-
-           }               
+                    } 
+                                  
            }
 
     }
@@ -64,4 +65,5 @@ pipeline{
     }
 
 }
+
 
