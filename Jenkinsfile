@@ -53,6 +53,9 @@ pipeline{
             //send the successful email
 
             echo "success"
+
+            mail bcc: '', body: 'Build success', cc: '', from: 'sunilrb2b@gmail.com', replyTo: '', subject: 'Build succeded', to: 'sunilrb2b@gmail.com'
+            
         }
 
         unsuccessful{
@@ -65,6 +68,4 @@ pipeline{
     }
 
 }
-
-
 
