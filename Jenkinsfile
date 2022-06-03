@@ -54,8 +54,9 @@ pipeline{
 
             echo "success"
 
-            mail bcc: '', body: 'Build success', cc: '', from: 'sunilrb2b@gmail.com', replyTo: '', subject: 'Build succeded', to: 'sunilrb2b@gmail.com'
-            
+            mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com.com', replyTo: '', 
+                subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Succeded", to: 'sunilrb2b@gmail.com'
+
         }
 
         unsuccessful{
@@ -63,6 +64,9 @@ pipeline{
             //send the unsuccessful email
 
             echo "failure"
+
+            mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com', replyTo: '', 
+                subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Failed", to: 'sunilrb2b@gmail.com'
 
         }
     }
