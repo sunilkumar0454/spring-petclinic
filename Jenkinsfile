@@ -6,11 +6,9 @@ pipeline{
          timeout(time: 1, unit : 'HOURS')
         retry(2)
          
-
     }
 
     triggers{
-
         cron('0 * * * *')
     }
 
@@ -18,9 +16,9 @@ pipeline{
 
         stage ('Soucre code') {
 
-            steps{
+            steps {
 
-                 git url:'https://github.com/sunilkumar0454/spring-petclinic.git'
+                 git url:'https://github.com/sunilkumar0454/spring-petclinic.git',
                  branch : 'main'
             }
 
