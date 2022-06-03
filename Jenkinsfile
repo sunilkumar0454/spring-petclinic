@@ -51,14 +51,14 @@ pipeline{
 
             //send the successful email
 
-            echo 'success'
+            echo "success"
         }
 
         unsuccessful{
 
             //send the unsuccessful email
 
-            echo : 'failure'
+            echo : "failure"
 
         }
     }
