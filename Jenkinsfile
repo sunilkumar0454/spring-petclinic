@@ -39,9 +39,9 @@ pipeline{
 
                steps{
 
-               junit testResults:'target/surfire-reports/*.xml'
+               junit testResults:'target/surefire-reports/*.xml'
                     } 
-                                  
+
            }
 
     }
@@ -65,5 +65,6 @@ pipeline{
     }
 
 }
+
 
 
