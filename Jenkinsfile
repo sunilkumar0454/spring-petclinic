@@ -7,6 +7,7 @@ pipeline {
         pollSCM('* * * * *')
         
     }
+
     stages{
            
             stage('SourceCode'){
@@ -34,6 +35,15 @@ pipeline {
                  junit '**/surefire-reports/*.xml'
                   archiveArtifacts artifacts: '**/*.jar', followSymlinks: false
 
+              }
+
+              stage('status Buils'){
+
+                  steps{
+
+                      echo 'Build success'
+                      
+                  }
               }
 
                   
