@@ -40,7 +40,7 @@ pipeline {
                   
               }
 
-              stage('status Buils'){
+              stage('status Build'){
 
                   steps{
 
@@ -49,7 +49,20 @@ pipeline {
                   }
               }
 
-    }
+              stage('Email report '){
 
+
+                steps{
+
+                  mail bcc: '', body: 'Build is success with all the Artifacts and Test Results', cc: '', from: '', replyTo: '', subject: 'Build status with   Artifacts and Test Results', to: 'sunilrb2b@gmail.com'
+              }
+
+
+
+              }
+
+              
+
+    }
 
 }
