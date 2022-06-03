@@ -54,7 +54,7 @@ pipeline {
 
                 steps{
 
-                  mail bcc: '', body: 'Build is success with all the Artifacts and Test Results', cc: '', from: '', replyTo: '', subject: 'Build status with   Artifacts and Test Results', to: 'sunilrb2b@gmail.com'
+                  mail bcc: '', body: 'Build is success with all the Artifacts and Test Results', cc: 'sunilrb2b@gmail.com', from: '', replyTo: '', subject: 'Build status with   Artifacts and Test Results', to: 'srikanth2107@outlook.com'
               }
 
 
