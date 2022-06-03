@@ -18,21 +18,32 @@ pipeline{
 
         stage ('Soucre code') {
 
-            git url:'https://github.com/sunilkumar0454/spring-petclinic.git'
-            
-            branch : 'main'
+            steps{
+
+                 git url:'https://github.com/sunilkumar0454/spring-petclinic.git'
+                 branch : 'main'
+            }
+
+           
           }
 
-          stage ('Build the code') { 
+          stage ('Build the code'){
+
+                steps { 
 
               sh script : 'mnv clean package'
 
          }
+
+          } 
            stage ('reporting') {
+
+               steps{
 
                junit testResults:'target/surfire-reports/*.xml'
 
            }               
+           }
 
     }
 
