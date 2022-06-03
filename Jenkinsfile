@@ -58,7 +58,7 @@ pipeline{
 
             //send the unsuccessful email
 
-            echo : "failure",
+            echo "failure"
 
         }
     }
