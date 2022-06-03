@@ -12,6 +12,10 @@ pipeline{
         cron('0 * * * *')
     }
 
+    parameters {
+        choice(name: 'GOAL', choices: ['compile', 'package', 'clean package'])
+    }
+
     stages{ 
 
         stage ('Soucre code') {
@@ -30,7 +34,7 @@ pipeline{
 
                 steps { 
 
-              sh script : 'mvn clean package'
+              sh script : : "mvn ${params.GOAL}"
 
           }
 
