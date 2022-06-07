@@ -50,30 +50,30 @@ pipeline{
 
     }
 
-    post {
+    // post {
 
-        success{
+      //  success{
 
             //send the successful email
 
-            echo "success"
+      //      echo "success"
 
-            mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com.com', replyTo: '', 
-                subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Succeded", to: 'sunilrb2b@gmail.com'
+      //      mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com.com', replyTo: '', 
+      //          subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Succeded", to: 'sunilrb2b@gmail.com'
 
-        }
+      //  }
 
-        unsuccessful{
+      //  unsuccessful{
 
             //send the unsuccessful email
 
-            echo "failure"
+      //      echo "failure"
 
-            mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com', replyTo: '', 
-                subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Failed", to: 'sunilrb2b@gmail.com'
+     //       mail bcc: '', body: "BUILD URL: ${BUILD_URL} TEST RESULTS ${RUN_TESTS_DISPLAY_URL} ", cc: '', from: 'sunilrb2b@gmail.com', replyTo: '', 
+     //           subject: "${JOB_BASE_NAME}: Build ${BUILD_ID} Failed", to: 'sunilrb2b@gmail.com'
 
-        }
-    }
+     //   }
+  //  }
 
 }
 
