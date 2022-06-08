@@ -46,20 +46,7 @@ pipeline{
           
           }
          
-          
-          // {
-
-            //    steps { 
-
-            //  sh script : "mvn ${params.GOAL}"
-
-           //   stash name: 'spc-build-jar', includes: 'target/*.jar'
-
-         // }
-
-         // } 
-
-
+        
            stage ('reporting') {
 
                steps{
