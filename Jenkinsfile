@@ -35,15 +35,12 @@ pipeline{
                      
                     steps {
 
-                            withSonarQubeEnv('SONAR_LATEST')
-                             {
-                                 sh script: "mvn ${params.GOAL} sonar:sonar"
-            
-            
-                           }
+                            withSonarQubeEnv('SONAR_LATEST') {
+                               sh script: "mvn ${params.GOAL} sonar:sonar"
 
-            } 
-          
+                                       }
+                         } 
+         
           }
          
         
@@ -55,6 +52,16 @@ pipeline{
                     } 
 
            }
+
+                   
+
+                   stage("Quality Gate") {
+                           steps {
+                                     timeout(time: 1, unit: 'HOURS') {
+                                   waitForQualityGate abortPipeline: true
+                                 }
+                              }
+                           }
 
     }
 
